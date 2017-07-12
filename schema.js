@@ -3,6 +3,11 @@ import fetch from "node-fetch";
 
 const BASE_URL = "http://localhost:3000";
 
+function getPersonById(id) {
+	return fetch(`${BASE_URL}/persons/${id}`)
+		.then(res => res.json())
+}
+
 const CommentType = new GraphQLObjectType({
 	name: 'Comment',
 	description: '...',
@@ -11,6 +16,10 @@ const CommentType = new GraphQLObjectType({
 		text: {
 			type: GraphQLString,
 			resolve: (res) => res.body
+		},
+		author: {
+			type: PersonType,
+			resolve: (res) => getPersonById(res.author)
 		}
 	})
 
@@ -36,6 +45,7 @@ const PersonType = new GraphQLObjectType({
 	})
 });
 
+
 const QueryType = new GraphQLObjectType({
 	name: 'Query',
 	description: '',
@@ -44,8 +54,7 @@ const QueryType = new GraphQLObjectType({
 		person: {
 			type: PersonType,
 			args: {id: { type: GraphQLString} },
-			resolve: (root, args) => fetch(`http://localhost:3000/persons/${args.id}`)
-				.then(res => res.json())
+			resolve: (root, args) => getPersonById(args.id)
 		}
 	})
 });
