@@ -1,0 +1,14 @@
+{
+  "persons": [
+    { "id": 1, "name": "Max", "firstName": "Krause" },
+    { "id": 2, "name": "Tim", "firstName": "Taumel" }
+  ],
+  "posts": [
+    { "id": 1, "title": "json-server", "author": 1, "comments": [1, 2, 3] }
+  ],
+  "comments": [
+    { "id": 1, "body": "some comment", "postId": 1, "author": 1 },
+    { "id": 2, "body": "another", "postId": 1 , "author": 1},
+    { "id": 3, "body": "and another", "postId": 1, "author": 2 }
+  ]
+}
