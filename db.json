@@ -1,14 +1,30 @@
 {
+  "events": [
+    {
+      "id": 1,
+      "title": "22. JavaScript MeetUp - GraphQL Edition",
+      "description": "Da haben wir einen guten Fang gemacht zum 22. MeetUp:\n• Einführung in GraphQL von Toni Möckel\n• GraphQL - ein Anwendungsbeispiel von Conrad Reuter\nSprich, GraphQL an allen Orten und Fronten(ds)! Wir werden einen guten Einsteig von Toni in GraphQL bekommen und aufgelockert wird das dann mit Conrads Erfahrungen aus der Praxis!",
+      "date": "Thu Jul 13 2017 19:00:00 GMT+0200 (CEST)",
+      "venue": 1,
+      "rsvps": [1, 2]
+    }
+  ],
+  "venues": [
+    {
+      "id": 1,
+      "title": "Nikkifaktur",
+      "address": "Lößnitzstraße 14, Haus 7",
+      "city": "Dresden",
+      "zip": "01123"
+    }
+  ],
   "persons": [
     { "id": 1, "name": "Max", "firstName": "Krause" },
     { "id": 2, "name": "Tim", "firstName": "Taumel" }
   ],
-  "posts": [
-    { "id": 1, "title": "json-server", "author": 1, "comments": [1, 2, 3] }
-  ],
   "comments": [
-    { "id": 1, "body": "some comment", "postId": 1, "author": 1 },
-    { "id": 2, "body": "another", "postId": 1 , "author": 1},
-    { "id": 3, "body": "and another", "postId": 1, "author": 2 }
+    { "id": 1, "body": "some comment", "eventId": 1, "author": 1 },
+    { "id": 2, "body": "another", "eventId": 1 , "author": 1},
+    { "id": 3, "body": "and another", "eventId": 1, "author": 2 }
   ]
 }
